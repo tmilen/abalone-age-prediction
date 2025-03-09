@@ -38,6 +38,7 @@ To run this project locally, follow these steps:
      flask run
 
 ---
+![image](https://github.com/user-attachments/assets/b4e0209f-fc80-40c6-af88-52b2f07bc02c)
 
 
 
