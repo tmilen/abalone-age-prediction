@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abalone Age Predictor</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+    <div class="container">
+        <h2>Abalone Age Predictor</h2>
+        <form action="{{ url_for('home') }}" method="post">
+            <label for="sex">Sex:</label>
+            <select name="sex" id="sex">
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+                <option value="I">Infant</option>
+            </select>
+
+            <label for="length">Length (mm):</label>
+            <input type="number" step="0.01" name="length" required>
+
+            <label for="diameter">Diameter (mm):</label>
+            <input type="number" step="0.01" name="diameter" required>
+
+            <label for="height">Height (mm):</label>
+            <input type="number" step="0.01" name="height" required>
+
+            <label for="whole_weight">Whole Weight (g):</label>
+            <input type="number" step="0.01" name="whole_weight" required>
+
+            <label for="shucked_weight">Shucked Weight (g):</label>
+            <input type="number" step="0.01" name="shucked_weight" required>
+
+            <label for="viscera_weight">Viscera Weight (g):</label>
+            <input type="number" step="0.01" name="viscera_weight" required>
+
+            <label for="shell_weight">Shell Weight (g):</label>
+            <input type="number" step="0.01" name="shell_weight" required>
+
+            <button type="submit">Predict Age</button>
+        </form>
+
+        {% if prediction is not none %}
+            <div class="result">
+                <h3>Predicted Age: {{ prediction }}</h3>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
